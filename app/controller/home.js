@@ -8,14 +8,16 @@ class HomeController extends Controller {
     const { ctx } = this;
 	const data = ctx.request.query;
 	console.log(data)
+	// await ctx.model.User.create({name:'姓名1'})  // 先创建一条数据
+	let datas =  await ctx.model.User.findAll({where:{id:data.id},raw:true})
+	// let datas = await ctx.model.User.findOne({where: {id: userInfo.buy_store_id}})
+	console.log(datas,'用户信息')
     ctx.body = {
-      code: 0,
-      data: {
-		  id:data.id,
-		  code:'成功'
-	  },
+      code: 200,
+      data: datas,
       message: 'success',
     };
+	return ctx
   }
   async userInfo() {
     const { ctx } = this;
