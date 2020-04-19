@@ -27,11 +27,11 @@ exports.security = {
         enable: false,
         // ignore: ["/api", '/editorUpload', '/w', '/p']
     },
-    domainWhiteList: ['http://127.0.0.1:8081', 'http://127.0.0.1:8082','http://127.0.0.1:1024','http://10.1.1.101:8080',"https://192.168.137.1:8080"]
+    // domainWhiteList: ['http://127.0.0.1:8081', 'http://127.0.0.1:8082','http://127.0.0.1:1024','http://10.1.1.101:8080',"https://192.168.137.1:8080","http://192.168.1.14:8000/"]
 }
   
 config.cors = {
-    // origin: '*', //允许所有跨域访问，注释掉则允许上面 白名单 访问
+    origin: '*', //允许所有跨域访问，注释掉则允许上面 白名单 访问
     credentials: true, // 允许跨域请求携带cookies
     allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH'
 };

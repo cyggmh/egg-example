@@ -6,7 +6,8 @@ const Controller = require('egg').Controller;
 class HomeController extends Controller {
   async index() {
     const { ctx } = this;
-	const data = ctx.request.query;
+	const data = ctx.request.body;
+	console.log(ctx)
 	console.log(data)
 	// await ctx.model.User.create({name:'姓名1'})  // 先创建一条数据
 	let datas =  await ctx.model.User.findAll({where:{id:data.id},raw:true})
