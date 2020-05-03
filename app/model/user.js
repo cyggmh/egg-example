@@ -9,25 +9,25 @@ module.exports = app => {
             autoIncrement: true,
             comment: 'ID'
         },
-        is_enabled: {
-            type: STRING(32),
-            defaultValue: 'yes',
-            comment: '是否启用'
-        },
-        mobile: {
-            type: STRING(32),
-            allowNull: true,
-            comment: '手机'
-        },
-        user_name: {
-            type: STRING(255),
-            allowNull: true,
-            comment: '用户名'
-        },
         name: {
             type: STRING(255),
-            allowNull: true,
+            allowNull: false,
             comment: '名称'
+        },
+        account: {
+            type: STRING(32),
+            allowNull: false,
+            comment: '账号'
+        },
+        password: {
+            type: STRING(32),
+            allowNull: false,
+            comment: '密码'
+        },
+        headImage: {
+            type: STRING(255),
+            allowNull: true,
+            comment: '头像'
         },
         // balance:{
         //           type: DECIMAL(10,2),
@@ -39,50 +39,80 @@ module.exports = app => {
         // 	defaultValue:0.00,
         //           comment: '冻结金额'
         // },
-        member_rank_id: {
+        seasonLevels: {
             type: NUMERIC(11),
             defaultValue: 1,
-            comment: '会员等级'
+            comment: '赛季等级'
         },
-        avatar: {
-            type: STRING(255),
-            defaultValue: '',
-            comment: '会员头像'
-        },
-        weixin_openId: {
-            type: STRING(64),
-            defaultValue: '',
-            comment: '微信openid'
-        },
-        buy_store_id: {
+        hardLight: {
             type: NUMERIC(11),
-            defaultValue: null,
-            comment: '上次消费的门店ID'
+            defaultValue: 1,
+            comment: '硬光等'
         },
-        amount: {
-            type: DECIMAL(10, 2),
-            defaultValue: 0.00,
-            comment: '消费金额'
+        artifact: {
+            type: NUMERIC(11),
+            defaultValue: 1,
+            comment: '赛季神器等级'
         },
-        gender: {
-            type: ENUM('male', 'female'),
-            defaultValue: 'male',
-            comment: '性别'
-        },
-        point: {
+        glimmering: {
             type: NUMERIC(11),
             defaultValue: 0,
-            comment: '积分',
+            comment: '微光'
         },
-        is_new: {
-            type: STRING(32),
-            defaultValue: '0',
-            comment: '是否为新会员'
+        coin: {
+            type: NUMERIC(11),
+            defaultValue: 0,
+            comment: '银币'
         },
-        promotion_code: {
+        // dust: {
+        //     type: ENUM('male', 'female'),
+        //     defaultValue: 'male',
+        //     comment: '光尘'
+        // },
+        dust: {
+            type: NUMERIC(11),
+            defaultValue: 0,
+            comment: '光尘'
+        },
+        title: {
             type: STRING(32),
             defaultValue: '',
-            comment: '地推码'
+            comment: '称号',
+        },
+        heroic: {
+            type: NUMERIC(11),
+            defaultValue: 0,
+            comment: '英勇分数'
+        },
+        glory: {
+            type: NUMERIC(11),
+            defaultValue: 0,
+            comment: '荣耀分数'
+        },
+        Evil: {
+            type: NUMERIC(11),
+            defaultValue: 0,
+            comment: '恶行分数'
+        },
+        legendFragments: {
+            type: NUMERIC(11),
+            defaultValue: 0,
+            comment: '传说碎片'
+        },
+        synopsis: {
+            type: STRING(255),
+            defaultValue: '',
+            comment: '个人简介'
+        },
+        position: {
+            type: STRING(32),
+            defaultValue: '',
+            comment: '职位'
+        },
+        empirical: {
+            type: NUMERIC(11),
+            defaultValue: 0,
+            comment: '经验值'
         },
         createtime: {
             type: DATE,
