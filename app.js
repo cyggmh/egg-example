@@ -15,6 +15,12 @@ module.exports = app => {
             // await app.model.Guild.sync({ force: true }); // 单个表
             // await app.model.Task.sync({ force: true }); // 单个表
             // await app.model.TaskRecord.sync({ force: true }); // 单个表
+            // await app.model.Goods.sync({ force: true }); // 单个表
+            // await app.model.Reward.sync({ force: true }); // 单个表
+            // await app.model.Code.sync({ force: true }); // 单个表
+            // await app.model.CodeRecord.sync({ force: true }); // 单个表
+            // await app.model.Position.sync({ force: true }); // 单个表
+            // await app.model.Prop.sync({ force: true }); // 单个表
         // }
 
 //             }

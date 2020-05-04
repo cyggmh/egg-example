@@ -21,7 +21,7 @@ class GuildController extends Controller {
 	}
 	if(data.taskReward){
 		if(data.taskReward == '全部'){
-			data.taskReward = ''
+			where.taskReward = ''
 		}
 		where.taskReward = { $like: '%' + data.taskReward + '%' }
 	}
