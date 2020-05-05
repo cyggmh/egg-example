@@ -42,6 +42,34 @@ class ImagesController extends Controller {
     };
 	return ctx
   }
+  //商品图片列表
+  async imagesGoods() {
+    const { ctx } = this;
+	const data = ctx.request.body;
+	console.log(data)
+	let datas =  await ctx.model.Images.findAll({where:{group:'2'},raw:true})
+	console.log(datas,'图片')
+    ctx.body = {
+      code: 200,
+      data: datas,
+      message: 'success',
+    };
+	return ctx
+  }
+  //头像图片列表
+  async imagesAvatar() {
+    const { ctx } = this;
+	const data = ctx.request.body;
+	console.log(data)
+	let datas =  await ctx.model.Images.findAll({where:{group:'1'},raw:true})
+	console.log(datas,'图片')
+    ctx.body = {
+      code: 200,
+      data: datas,
+      message: 'success',
+    };
+	return ctx
+  }
 }
 
 module.exports = ImagesController;
